@@ -1,0 +1,23 @@
+{
+    "name": "neokike/Laravel-Redsys",
+    "description": "Pasarela de Pago Redsys para Laravel 5",
+    "keywords": ["sermepa", "payment", "pasarela","lacaixa","sabadell","redsys"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pedro Gorrin",
+            "email": "gorrin.pedro@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Neokike\\Redsys\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
+
