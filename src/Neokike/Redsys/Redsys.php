@@ -54,6 +54,7 @@ class Redsys{
         $this->_setUrlKo = config('redsys.url_ko');
         $this->_setNombreComercio = config('redsys.nombre_comercio');
         $this->_setFuc = config('redsys.codigo_comercio');
+        $this->_setTerminal = config('redsys.terminal');
 
     }
 
