@@ -110,6 +110,10 @@ class Redsys{
         $this->_setImporte=$importe;
     }
 
+    public function getImporte(){
+        return $this->_setImporte;
+    }
+
     /**
      * Asignamos el tipo de moneda
      *
