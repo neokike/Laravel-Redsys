@@ -318,6 +318,11 @@ class Redsys{
         }
     }
 
+    public function getFirma()
+    {
+        return $this->_setFirma;
+    }
+
 
     /**
      * Asignar el nombre del formulario
