@@ -14,6 +14,7 @@ return array(
 'url_ok'=>'',
 
 'url_ko'=>''
+'terminal'=>''
 
 
 );
