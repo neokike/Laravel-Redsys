@@ -345,6 +345,15 @@ class Redsys{
         $this->_setSubmit = $btnsubmit;
     }
 
+    public function hiddenSubmit($nombre = 'submitsermepa',$texto='Enviar')
+    {
+        if(strlen(trim($nombre))==0)
+            throw new Exception('Asigne nombre al boton submit');
+
+        $btnsubmit = '<input type="submit" style="display: none" name="'.$nombre.'" id="'.$nombre.'" value="'.$texto.'" />';
+        $this->_setSubmit = $btnsubmit;
+    }
+
     /**
      * Ejecutar la redirección automática al TPV
      */
@@ -447,7 +456,7 @@ class Redsys{
         <form action="'.$this->_setEntorno.'" method="post" id="'.$this->_setNameForm.'" name="'.$this->_setNameForm.'" >
             <input type="hidden" name="Ds_Merchant_Amount" ng-value="vm.tdc.importe" />
             <input type="hidden" name="Ds_Merchant_Currency" value="'.$this->_setMoneda.'" />
-            <input type="hidden" name="Ds_Merchant_Order" ng-value="vm.tdc.importe" />
+            <input type="hidden" name="Ds_Merchant_Order" ng-value="vm.tdc.orden" />
             <input type="hidden" name="Ds_Merchant_MerchantData" value="'.$this->_setMerchantData.'" />
             <input type="hidden" name="Ds_Merchant_MerchantCode" value="'.$this->_setFuc.'" />
             <input type="hidden" name="Ds_Merchant_Terminal" value="'.$this->_setTerminal.'" />
