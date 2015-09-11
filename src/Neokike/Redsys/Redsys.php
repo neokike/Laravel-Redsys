@@ -441,6 +441,34 @@ class Redsys{
         return $formulario;
     }
 
+    public function create_angular_form()
+    {
+        $formulario='
+        <form action="'.$this->_setEntorno.'" method="post" id="'.$this->_setNameForm.'" name="'.$this->_setNameForm.'" >
+            <input type="hidden" name="Ds_Merchant_Amount" ng-value="@{{vm.tdc.importe}}" />
+            <input type="hidden" name="Ds_Merchant_Currency" value="'.$this->_setMoneda.'" />
+            <input type="hidden" name="Ds_Merchant_Order" value="@{{vm.tdc.importe}}" />
+            <input type="hidden" name="Ds_Merchant_MerchantData" value="'.$this->_setMerchantData.'" />
+            <input type="hidden" name="Ds_Merchant_MerchantCode" value="'.$this->_setFuc.'" />
+            <input type="hidden" name="Ds_Merchant_Terminal" value="'.$this->_setTerminal.'" />
+            <input type="hidden" name="Ds_Merchant_TransactionType" value="'.$this->_setTransactionType.'" />
+            <input type="hidden" name="Ds_Merchant_Titular" value="@{{vm.tdc.nombreUsuario}}" />
+            <input type="hidden" name="Ds_Merchant_MerchantName" value="'.$this->_setNombreComercio.'" />
+            <input type="hidden" name="Ds_Merchant_MerchantURL" value="'.$this->_setUrlNotificacion.'" />
+            <input type="hidden" name="Ds_Merchant_ProductDescription" value="@{{vm.tdc.productoDescripcion}}" />
+            <input type="hidden" name="Ds_Merchant_ConsumerLanguage " value="'.$this->_setIdioma.'" />
+            <input type="hidden" name="Ds_Merchant_UrlOK" value="'.$this->_setUrlOk.'" />
+            <input type="hidden" name="Ds_Merchant_UrlKO" value="'.$this->_setUrlKo.'" />
+            <input type="hidden" name="Ds_Merchant_PayMethods" value="'.$this->_setMethods.'" />
+            <input type="hidden" name="Ds_Merchant_MerchantSignature" value="'.$this->_setFirma.'" />       
+        ';
+        $formulario.=$this->_setSubmit;
+        $formulario.='
+        </form>        
+        ';
+        return $formulario;
+    }
+
     /**
      * Parseo a Float
      *
