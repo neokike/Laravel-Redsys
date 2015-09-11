@@ -13,7 +13,7 @@ return array(
 
 'url_ok'=>'',
 
-'url_ko'=>''
+'url_ko'=>'',
 'terminal'=>''
 
 
