@@ -22,6 +22,9 @@ class RedsysServiceProvider extends ServiceProvider {
 	{
 		//$this->package('ubublog/ceca');
         AliasLoader::getInstance()->alias('Redsys', 'Neokike\Redsys\Facades\Redsys');
+         $this->publishes([
+        __DIR__.'/../../config/redsys.php' => config_path('redsys.php'),
+    ]);
 	}
 
 	/**
