@@ -50,6 +50,7 @@ class Redsys{
         $this->_setNameForm = 'servired_form';
         $this->_setSubmit = '';
         $this->_setClave = config('redsys.clave');
+        $this->_setUrlNotificacion = config('redsys.url_notificacion');
         $this->_setUrlOk = config('redsys.url_ok');
         $this->_setUrlKo = config('redsys.url_ko');
         $this->_setNombreComercio = config('redsys.nombre_comercio');
