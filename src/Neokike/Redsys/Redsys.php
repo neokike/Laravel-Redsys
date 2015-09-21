@@ -483,8 +483,8 @@ class Redsys{
             <input type="hidden" name="Ds_Merchant_MerchantURL" value="'.$this->_setUrlNotificacion.'" />
             <input type="hidden" name="Ds_Merchant_ProductDescription" ng-value="vm.tdc.productoDescripcion" />
             <input type="hidden" name="Ds_Merchant_ConsumerLanguage " value="'.$this->_setIdioma.'" />
-            <input type="hidden" name="Ds_Merchant_UrlOK" value="'.$this->_setUrlOk.'" />
-            <input type="hidden" name="Ds_Merchant_UrlKO" value="'.$this->_setUrlKo.'" />
+            <input type="hidden" name="Ds_Merchant_UrlOK" ng-value="vm.tdc.url_ok" />
+            <input type="hidden" name="Ds_Merchant_UrlKO" ng-value="vm.tdc.url_ko" />
             <input type="hidden" name="Ds_Merchant_PayMethods" value="'.$this->_setMethods.'" />
             <input type="hidden" name="Ds_Merchant_MerchantSignature" ng-value="vm.tdc.firma" />       
         ';
