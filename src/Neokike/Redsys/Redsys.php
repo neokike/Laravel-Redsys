@@ -206,7 +206,7 @@ class Redsys{
             <input type="hidden" name="Ds_Signature" ng-value="vm.tdc.signature" />
         ';
 
-        $formulario.=$this->hiddenSubmit(nombre,$texto);
+        $formulario.=$this->hiddenSubmit($nombre,$texto);
         $formulario.='
         </form>        
         ';
