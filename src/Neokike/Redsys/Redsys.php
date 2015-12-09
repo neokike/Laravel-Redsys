@@ -246,4 +246,23 @@ class Redsys{
     }
 
 
+    public function comprobar($postData='',$kc)
+    {
+        if (!empty( $postData ) ) {//URL DE RESP. ONLINE
+            
+            $version = $postData["Ds_SignatureVersion"];
+            $datos = $postData["Ds_MerchantParameters"];
+            $signatureRecibida = $postData["Ds_Signature"];
+            
+
+            $decodec = $this->decodeMerchantParameters($datos);    
+            $firma = $this->createMerchantSignatureNotif($kc,$datos);  
+
+            if ($firma === $signatureRecibida){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
