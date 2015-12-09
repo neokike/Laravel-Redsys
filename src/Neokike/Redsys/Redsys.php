@@ -15,7 +15,9 @@ class Redsys{
 
   /******  Array de DatosEntrada ******/
     var $vars_pay = array();
-    
+    private $entorno = 'https://sis-t.redsys.es:25443/sis/realizarPago';
+    private $nameForm = 'frm';
+
     /******  Set parameter ******/
     public function setParameter($key,$value){
         $this->vars_pay[$key]=$value;
@@ -198,7 +200,7 @@ class Redsys{
     {
 
         $formulario='
-        <form name="frm" action="http://sis-d.redsys.es/sis/realizarPago" method="POST" target="_blank">
+        <form action="'.$this->entorno.'" method="post" id="'.$this->nameForm.'" name="'.$this->nameForm.'" >
             <input type="hidden" name="Ds_SignatureVersion" ng-value="vm.tdc.version" />
             <input type="hidden" name="Ds_MerchantParameters" ng-value="vm.tdc.params" />
             <input type="hidden" name="Ds_Signature" ng-value="vm.tdc.signature" />
@@ -229,6 +231,18 @@ class Redsys{
 
         $btnsubmit = '<input type="submit" name="'.$nombre.'" id="'.$nombre.'" value="'.$texto.'" />';
         return $btnsubmit;
+    }
+
+    public function set_entorno($entorno='pruebas')
+    {
+        if(trim($entorno) == 'real'){
+            //real
+            $this->entorno='https://sis.sermepa.es/sis/realizarPago';
+        }
+        else{
+            //pruebas
+            $this->entorno ='https://sis-t.redsys.es:25443/sis/realizarPago';
+        }
     }
 
 
