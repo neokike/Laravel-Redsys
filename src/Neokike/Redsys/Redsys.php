@@ -263,6 +263,8 @@ class Redsys{
             } else {
                 return false;
             }
+        }else{
+            return false;
         }
     }
 }
