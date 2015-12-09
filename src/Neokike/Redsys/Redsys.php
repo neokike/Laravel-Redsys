@@ -194,7 +194,7 @@ class Redsys{
         return $this->encodeBase64($res);   
     }
 
-   public function create_angular_form()
+   public function create_angular_form($nombre = 'submitsermepa',$texto='Enviar')
     {
 
         $formulario='
@@ -204,7 +204,7 @@ class Redsys{
             <input type="hidden" name="Ds_Signature" ng-value="vm.tdc.signature" />
         ';
 
-        $formulario.=$this->hiddenSubmit();
+        $formulario.=$this->hiddenSubmit(nombre,$texto);
         $formulario.='
         </form>        
         ';
