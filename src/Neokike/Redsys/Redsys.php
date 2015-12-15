@@ -15,7 +15,7 @@ class Redsys{
 
   /******  Array de DatosEntrada ******/
     var $vars_pay = array();
-    private $entorno = 'https://sis-t.redsys.es:25443/sis/realizarPago';
+    public $entorno = 'https://sis-t.redsys.es:25443/sis/realizarPago';
     private $nameForm = 'frm';
 
     /******  Set parameter ******/
@@ -196,11 +196,11 @@ class Redsys{
         return $this->encodeBase64($res);   
     }
 
-   public function create_angular_form($nombre = 'submitsermepa',$texto='Enviar')
+   public function create_angular_form($nombre = 'submitsermepa',$texto='Enviar',$url = ' https://sis.redsys.es/sis/realizarPago')
     {
 
         $formulario='
-        <form action="'.$this->entorno.'" method="post" id="'.$this->nameForm.'" name="'.$this->nameForm.'" >
+        <form action="'.$url.'" method="post" id="'.$this->nameForm.'" name="'.$this->nameForm.'" >
             <input type="hidden" name="Ds_SignatureVersion" ng-value="vm.tdc.version" />
             <input type="hidden" name="Ds_MerchantParameters" ng-value="vm.tdc.params" />
             <input type="hidden" name="Ds_Signature" ng-value="vm.tdc.signature" />
