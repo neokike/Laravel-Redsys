@@ -237,7 +237,7 @@ class Redsys{
     {
         if(trim($entorno) == 'real'){
             //real
-            $this->entorno='https://sis.sermepa.es/sis/realizarPago';
+            $this->entorno='https://sis.redsys.es/sis/realizarPago';
         }
         else{
             //pruebas
